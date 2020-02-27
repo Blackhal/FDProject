@@ -1,6 +1,7 @@
 package tests;
 
-import tools.Dice;
+import tools.*;
+import items.*;
 
 public class TestingClass {
 
@@ -26,6 +27,17 @@ public class TestingClass {
 		System.out.println("Dado de d20, Resultado: " + d20.getResult());
 		System.out.println("Dado de d30, Resultado: " + d30.getResult());
 		
+		Driver d1 = new Driver("Ivan Barrio Munoz");
+		Driver d2 = new Driver("Caroline Griffne");
+		
+		Team team1 = new Team();
+		team1.createTeam("SMY Racing Team", d1, d2);
+		team1.createCars();
+		d1.assignCar(team1.getCar1());
+		d2.assignCar(team1.getCar2());
+		
+		System.out.println(d1.getDriverStatus());
+		System.out.println(d2.getDriverStatus());
 	}
 
 }
